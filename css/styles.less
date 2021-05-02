@@ -1,6 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  // webkit-box-sizing: border-box;
+  // moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 //Variables
@@ -12,8 +16,176 @@
 @gris-claro: #eaeaea;
 
 //Fuentes
-@fuente-primcipal: "Playfair Display", serif;
+@fuente-principal: "Playfair Display", serif;
 @fuente-secundaria: "Poppins", sans-serif;
 
-// font-family: 'Playfair Display', serif;
-// font-family: 'Poppins', sans-serif;
+// Estilos generales
+
+body {
+  font-size: 16px;
+  font-family: @fuente-principal;
+  color: @texto-oscuro;
+}
+
+.container{
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+a{
+  text-decoration: none;
+  color: @texto-oscuro;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  &:hover{
+    color: fade(@texto-oscuro, 50%);
+  }
+}
+
+img{
+  vertical-align: top;
+  max-width: 100%;
+}
+
+//encabezado
+
+header{
+  .menu-bar-pc{
+    background-color: @blanco;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    padding: 0 2.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5.875rem;
+    border-bottom: 1px solid @gris-claro;
+
+    .logo{
+      max-width:3.125rem;
+    }
+    .menu-principal{
+      ul{
+        li{
+          list-style-type: none;
+          display: inline-block;
+          padding: 0 0.5625rem;
+        }
+      }
+    }
+    .top-redes{
+      a{
+        padding: 0 0.5625rem;
+      }
+    }
+  }
+}
+
+//Main
+
+.main{
+  margin-top: 5.875rem;
+  //PORTADA
+  .portada{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .col{
+      width: 50%;
+      background-color: @negro-custom;
+      color: @blanco;
+      display: flex;
+      flex-wrap: wrap;
+
+      .foto{
+        background-size: cover;
+        background-position: center;
+        width: 50%;
+        &.izq{
+          background-image: url('../img/portada-1.jpg');
+          background-position: left;
+        }
+        &.der{
+          background-image: url('../img/portada-4.jpg');
+          opacity: 0.8;
+        }
+        .overlay{
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          background-color: fade(@negro-custom, 40%);
+          position: relative;
+          cursor: pointer;
+          -o-transition: all .3s ease;
+          -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+          &:hover{
+            opacity: 1;
+          }
+          i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5625rem;
+          }
+        }
+      }
+      .texto{
+        width: 50%;
+        padding: 3.375rem;
+        h2{
+          font-size: 1.8125rem;
+          font-weight: 400;
+          line-height: 2.9875rem;
+          margin-bottom: 1.125rem;
+        }
+        p{
+          font-size: 0.9375rem;
+          line-height: 1.75rem;
+
+        }
+      }
+      .foto-full{
+        width: 100%;
+        min-height: 15.25rem;
+        background-size: cover;
+        background-position: center;
+
+        &.izq{
+          background-image: url('../img/portada-2.jpg');
+          opacity: 0.8;
+        }
+        &.der{
+          background-image: url('../img/portada-3.jpg');
+        }
+        .overlay{
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          background-color: fade(@negro-custom, 40%);
+          position: relative;
+          cursor: pointer;
+          -o-transition: all .3s ease;
+          -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+          &:hover{
+            opacity: 1;
+          }
+          i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5625rem;
+          }
+        }
+      }
+    }
+  }
+}
