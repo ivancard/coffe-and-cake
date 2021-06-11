@@ -10,4 +10,4 @@
 - Parallax, al hacer scrolol sobre el formulario la imagen de fondo se desplaza.
 - Animación de los labels del formulario al hacer focus y blur en cada imput.
 
-https://ivancard.github.io/coffe-and-cake/
+## Podes probarla [acá.](https://ivancard.github.io/coffe-and-cake/)
